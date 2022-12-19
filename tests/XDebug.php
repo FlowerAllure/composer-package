@@ -13,6 +13,6 @@ foreach ($arr1 as $value) {
     $arr2[] = $value;
 }
 
-class XDebug {
-
+class XDebug
+{
 }

@@ -2,7 +2,7 @@
 
 namespace FlowerAllure\ComposerUtils\App\Provider;
 
-use FlowerAllure\ComposerUtils\App\Services\WeatherServer;;
+use FlowerAllure\ComposerUtils\App\Services\WeatherServer;
 
 class WeatherProvider extends \Illuminate\Support\ServiceProvider
 {
@@ -10,7 +10,7 @@ class WeatherProvider extends \Illuminate\Support\ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(WeatherServer::class, function(){
+        $this->app->singleton(WeatherServer::class, function () {
             return new WeatherServer(config('services.weather.key'));
         });
 

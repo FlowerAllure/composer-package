@@ -5,14 +5,14 @@ namespace FlowerAllure\ComposerUtils\Tests\Services;
 use Mockery;
 use GuzzleHttp\Client;
 use Mockery\Matcher\AnyArgs;
-use FlowerAllure\ComposerUtils\App\Exceptions\Exception;
 use GuzzleHttp\Psr7\Response;
 use App\Services\WeatherServer;
 use GuzzleHttp\ClientInterface;
 use PHPUnit\Framework\TestCase;
-use FlowerAllure\ComposerUtils\App\Exceptions\HttpException;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\TransferException;
+use FlowerAllure\ComposerUtils\App\Exceptions\Exception;
+use FlowerAllure\ComposerUtils\App\Exceptions\HttpException;
 use FlowerAllure\ComposerUtils\App\Exceptions\InvalidArgumentException;
 
 class WeatherTest extends TestCase

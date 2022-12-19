@@ -3,8 +3,8 @@
 namespace FlowerAllure\ComposerUtils\App\Services;
 
 use GuzzleHttp\Client;
-use FlowerAllure\ComposerUtils\App\Exceptions\HttpException;
 use GuzzleHttp\Exception\GuzzleException;
+use FlowerAllure\ComposerUtils\App\Exceptions\HttpException;
 use FlowerAllure\ComposerUtils\App\Exceptions\InvalidArgumentException;
 
 class WeatherServer
