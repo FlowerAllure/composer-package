@@ -1,9 +1,11 @@
 <?php
-namespace Tests;
-
-use FlowerAllure\ComposerUtils\App\HelloWorld;
+namespace FlowerAllure\ComposerUtils\Tests;
 
 require_once '../vendor/autoload.php';
 
 
-HelloWorld::stout();
+\FlowerAllure\ComposerUtils\App\HelloWorld::stout();
+
+class HelloWorld {
+
+}
