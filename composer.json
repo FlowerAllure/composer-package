@@ -1,0 +1,31 @@
+{
+    "name": "flowerallure/composer-utils",
+    "autoload": {
+        "psr-4": {
+            "FlowerAllure\\ComposerUtils\\App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FlowerAllure\\ComposerUtils\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "feng.pan",
+            "email": "feng.pan@mail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "predis/predis": "^2",
+        "guzzlehttp/guzzle": "^7",
+        "ext-redis": "*"
+    },
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "^9",
+        "friendsofphp/php-cs-fixer": "^3",
+        "mockery/mockery": "^1.5"
+    }
+}
