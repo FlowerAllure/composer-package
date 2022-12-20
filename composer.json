@@ -27,5 +27,12 @@
         "phpunit/phpunit": "^9",
         "friendsofphp/php-cs-fixer": "^3",
         "mockery/mockery": "^1.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FlowerAllure\\ComposerUtils\\App\\Provider\\WeatherProvider"
+            ]
+        }
     }
 }

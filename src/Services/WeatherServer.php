@@ -60,15 +60,21 @@ class WeatherServer
      * 请求城市接口
      * @return mixed
      * @throws HttpException
+     * @param mixed $year
      */
-    public function getCity(): array
+    public function getCity($year): array
     {
         $url = 'https://www.wenjiangs.com/api/v2/xzqhSimple';
-        $query = ['year' => date('Y')];
+
+        if (!strtotime($year)) {
+            throw new InvalidArgumentException('Invalid year: ' . $year);
+        }
 
         try {
             $response = $this->getHttpClient()->get($url, [
-                'query' => $query,
+                'query' => [
+                    'year' => $year,
+                ],
             ])->getBody()->getContents();
 
             return json_decode($response, true);
