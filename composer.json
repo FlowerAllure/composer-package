@@ -16,6 +16,7 @@
             "email": "feng.pan@mail.com"
         }
     ],
+    "license": "MIT",
     "require": {
         "php": ">=8.2",
         "predis/predis": "^2",
