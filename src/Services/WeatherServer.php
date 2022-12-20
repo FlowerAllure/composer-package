@@ -58,15 +58,16 @@ class WeatherServer
 
     /**
      * 请求城市接口
-     * @return mixed
-     * @throws HttpException
      * @param mixed $year
+     * @return mixed
+     * @throws InvalidArgumentException
+     * @throws HttpException
      */
     public function getCity($year): array
     {
         $url = 'https://www.wenjiangs.com/api/v2/xzqhSimple';
 
-        if (!strtotime($year)) {
+        if (!preg_match('/^(19|20)\\d{2}$/', $year)) {
             throw new InvalidArgumentException('Invalid year: ' . $year);
         }
 
