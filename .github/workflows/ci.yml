@@ -1,6 +1,4 @@
-name: Tests
-
-runs-on: self-hosted
+name: CI
 
 on:
   push:
@@ -12,6 +10,7 @@ jobs:
     strategy:
       matrix:
         php_version: [8.2]
+    runs-on: self-hosted
     steps:
       # 检出代码
       - uses: actions/checkout@v2

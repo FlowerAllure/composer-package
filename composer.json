@@ -1,5 +1,6 @@
 {
     "name": "flowerallure/composer-utils",
+    "description": "Composer Utils",
     "autoload": {
         "psr-4": {
             "FlowerAllure\\ComposerUtils\\App\\": "src/"
