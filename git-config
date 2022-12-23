@@ -1,6 +1,10 @@
-[remote "gitee"]
+[remote "origin"]
 	url = git@gitee.com:AnEmptyBottle/composer-utils.git
+	url = git@github.com:FlowerAllure/composer-utils.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
 [remote "github"]
 	url = git@github.com:FlowerAllure/composer-utils.git
+	fetch = +refs/heads/*:refs/remotes/github/*
+[remote "gitee"]
+	url = git@gitee.com:AnEmptyBottle/composer-utils.git
 	fetch = +refs/heads/*:refs/remotes/github/*
