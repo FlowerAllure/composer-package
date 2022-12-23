@@ -3,8 +3,6 @@ name: UtilCI
 on:
   push:
     branches: [ master ]
-    paths:
-      - src/*
 
 jobs:
   phpunit:
