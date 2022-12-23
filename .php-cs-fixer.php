@@ -2,12 +2,23 @@
 use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 
+$header = <<<EOF
+This file is part of the flower-allure/composer-utils.
+(c) flower-allure <i@flower-allure.me>
+This source file is subject to the LGPL license that is bundled.
+EOF;
+
 $rules = [
     '@PSR2'                                 => true,
     '@PHP82Migration'                       => true,
     'array_syntax'                          => [
         'syntax' => 'short'
     ],
+    'header_comment' => [
+        'header' => $header
+    ],
+    'php_unit_construct'                    => true,
+    'php_unit_strict'                       => true,
     'combine_consecutive_unsets'            => true,
     'no_useless_else'                       => true,
     'ordered_imports'                       => [
