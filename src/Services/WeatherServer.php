@@ -83,4 +83,24 @@ class WeatherServer
             throw new HttpException($exception->getMessage(), $exception->getCode(), $exception);
         }
     }
+
+    /**
+     * 获取实时天气
+     * @throws HttpException
+     * @throws InvalidArgumentException
+     */
+    public function getLiveWeather($city, $format = 'json')
+    {
+        return $this->getWeather($city, 'base', $format);
+    }
+
+    /**
+     * 获取天气预报
+     * @throws HttpException
+     * @throws InvalidArgumentException
+     */
+    public function getForecastsWeather($city, $format = 'json')
+    {
+        return $this->getWeather($city, 'all', $format);
+    }
 }

@@ -176,4 +176,28 @@ class WeatherTest extends TestCase
 
         $this->assertSame(['success' => true], $weather->getCity(2022));
     }
+
+    /**
+     * 测试实时天气
+     * @throws HttpException
+     * @throws InvalidArgumentException
+     */
+    public function testGetLiveWeather()
+    {
+        $weather = Mockery::mock(WeatherServer::class, ['mock-key'])->makePartial();
+        $weather->expects()->getWeather('深圳', 'base', 'json')->andReturn(['success' => true]);
+        $this->assertSame(['success' => true], $weather->getLiveWeather('深圳'));
+    }
+
+    /**
+     * 测试天气预报
+     * @throws HttpException
+     * @throws InvalidArgumentException
+     */
+    public function testGetForecastsWeather()
+    {
+        $weather = Mockery::mock(WeatherServer::class, ['mock-key'])->makePartial();
+        $weather->expects()->getWeather('深圳', 'all', 'json')->andReturn(['success' => true]);
+        $this->assertSame(['success' => true], $weather->getForecastsWeather('深圳'));
+    }
 }
