@@ -86,20 +86,26 @@ class WeatherServer
 
     /**
      * 获取实时天气
+     * @param string $city
+     * @param string $format
+     * @return mixed|string
      * @throws HttpException
      * @throws InvalidArgumentException
      */
-    public function getLiveWeather($city, $format = 'json')
+    public function getLiveWeather(string $city, string $format = 'json'): mixed
     {
         return $this->getWeather($city, 'base', $format);
     }
 
     /**
      * 获取天气预报
+     * @param string $city
+     * @param string $format
+     * @return mixed|string
      * @throws HttpException
      * @throws InvalidArgumentException
      */
-    public function getForecastsWeather($city, $format = 'json')
+    public function getForecastsWeather(string $city, string $format = 'json'): mixed
     {
         return $this->getWeather($city, 'all', $format);
     }

@@ -38,34 +38,15 @@ class StreamGroup
         return $this;
     }
 
-    public function xReadGroupHead(string $group, string $consumer): array|Redis
+    public function xReadGroup(string $group, string $consumer): array|Redis
     {
         return $this->redis->xReadGroup($group, $consumer, [$this->streamKey => '>'], 1);
     }
 
-    public function xAck(): static
+    public function xAck(string $group, array $messages)
     {
-        $hArr = $tArr = [];
-        for ($i = 1; $i < 10; $i++) {
-            $hArr[] = "0-$i";
-            $hArr[] = "1-$i";
-            $tArr[] = "1-$i";
-        }
-        $this->redis->xAck($this->streamKey, $this->headGroup, $hArr);
-        $this->redis->xAck($this->streamKey, $this->tailGroup, $tArr);
-
-        return $this;
+        $this->redis->xAck($this->streamKey, $group, $messages);
     }
-
-//    public function xReadGroupHead(): array|Redis
-//    {
-//        return $this->redis->xReadGroup($this->headGroup, 'c1', [$this->streamKey => '>'], 1);
-//    }
-//
-//    public function xReadGroupTail(): array|Redis
-//    {
-//        return $this->redis->xReadGroup($this->tailGroup, 'c1', [$this->streamKey => '>'], 1);
-//    }
 
     public function del(): static
     {

@@ -31,7 +31,7 @@ class StreamGroupTest extends RedisTest
 
     public function testXReadHeadGroup()
     {
-        while ($xReadGroupResult = $this->streamGroup->xReadGroupHead()) {
+        while ($xReadGroupResult = $this->streamGroup->xReadGroup('head_group', 'consumer1')) {
             var_dump($xReadGroupResult);
         }
         $this->assertTrue(true);
@@ -39,7 +39,7 @@ class StreamGroupTest extends RedisTest
 
     public function testXReadTailGroup()
     {
-        while ($xReadGroupResult = $this->streamGroup->xReadGroupTail()) {
+        while ($xReadGroupResult = $this->streamGroup->xReadGroup('tail_group', 'consumer2')) {
             var_dump($xReadGroupResult);
         }
         $this->assertTrue(true);
@@ -47,7 +47,15 @@ class StreamGroupTest extends RedisTest
 
     public function testXGroupAck()
     {
-        $this->streamGroup->xAck();
+        $hArr = $tArr = [];
+        for ($i = 1; $i < 10; $i++) {
+            $hArr[] = "0-$i";
+            $hArr[] = "1-$i";
+            $tArr[] = "1-$i";
+        }
+        $this->streamGroup->xAck('head_group', $hArr);
+        $this->streamGroup->xAck('tail_group', $tArr);
+
         $this->assertTrue(true);
     }
 }

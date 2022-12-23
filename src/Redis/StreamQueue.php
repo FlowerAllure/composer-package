@@ -14,9 +14,7 @@ class StreamQueue
     public function work($group)
     {
         while (true) {
-            $xReadGroupResult = $this->streamGroup->xReadGroupHead();
-
-            break ;
+            return $this->streamGroup->xReadGroup($group, 'test');
         }
     }
 }

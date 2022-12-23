@@ -14,11 +14,11 @@ class WeatherProvider extends \Illuminate\Support\ServiceProvider
             return new WeatherServer(config('services.weather.key'));
         });
 
-        // $this->app->alias(WeatherServer::class, 'weather');
+        $this->app->alias(WeatherServer::class, 'weather');
     }
 
     public function provides(): array
     {
-        return [WeatherServer::class];
+        return [WeatherServer::class, 'weather'];
     }
 }
