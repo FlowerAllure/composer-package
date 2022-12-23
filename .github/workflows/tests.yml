@@ -9,7 +9,6 @@ jobs:
   phpunit:
     strategy:
       matrix:
-        # 需要在以下 PHP 版本中测试
         php_version: [8.2]
     runs-on: ubuntu-latest
     steps:
