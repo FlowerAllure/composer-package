@@ -1,4 +1,4 @@
-name: CI
+name: UtilCI
 
 on:
   push:
