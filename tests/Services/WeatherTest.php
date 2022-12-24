@@ -32,6 +32,7 @@ class WeatherTest extends TestCase
 
     /**
      * 测试天气参数 $format 是 json|xml
+     * @covers
      * @throws HttpException
      */
     public function testGetWeatherWithInvalidFormat()
@@ -46,6 +47,7 @@ class WeatherTest extends TestCase
 
     /**
      * 测试天气参数 $type 是 base|all
+     * @covers
      * @throws HttpException
      */
     public function testGetWeatherWithInvalidType()
@@ -60,6 +62,7 @@ class WeatherTest extends TestCase
 
     /**
      * 测试天气HTTP请求-返回JSON
+     * @covers
      * @throws GuzzleException
      * @throws InvalidArgumentException
      * @throws HttpException
@@ -91,6 +94,7 @@ class WeatherTest extends TestCase
 
     /**
      * 测试天气HTTP请求-返回XML
+     * @covers
      * @throws GuzzleException
      * @throws HttpException
      * @throws InvalidArgumentException
@@ -122,6 +126,7 @@ class WeatherTest extends TestCase
 
     /**
      * 测试天气请求异常
+     * @covers
      * @throws GuzzleException
      * @throws InvalidArgumentException
      */
@@ -142,7 +147,11 @@ class WeatherTest extends TestCase
         $weather->getWeather('深圳');
     }
 
-    // 测试 getHttpClient 返回结果为 GuzzleHttp\ClientInterface 实例
+    /**
+     * 测试 getHttpClient 返回结果为 GuzzleHttp\ClientInterface 实例
+     * @covers
+     * @return void
+     */
     public function testGetHttpClient()
     {
         $this->assertInstanceOf(ClientInterface::class, $this->weatherServer->getHttpClient());
@@ -150,6 +159,7 @@ class WeatherTest extends TestCase
 
     /**
      * 测试天气参数 $year 是有效的
+     * @covers
      * @throws HttpException
      */
     public function testGetCityWithInvalidYear()
@@ -164,6 +174,7 @@ class WeatherTest extends TestCase
 
     /**
      * 测试城市HTTP请求
+     * @covers
      * @return void
      * @throws GuzzleException
      * @throws HttpException
@@ -185,6 +196,7 @@ class WeatherTest extends TestCase
 
     /**
      * 测试实时天气
+     * @covers
      * @throws HttpException
      * @throws InvalidArgumentException
      */
@@ -197,6 +209,7 @@ class WeatherTest extends TestCase
 
     /**
      * 测试天气预报
+     * @covers
      * @throws HttpException
      * @throws InvalidArgumentException
      */
