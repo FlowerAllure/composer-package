@@ -21,4 +21,4 @@ jobs:
       - name: Install Dependencies
         run: composer install
       - name: PHPUnit Check
-        run: ./vendor/bin/phpunit
+        run: XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-text

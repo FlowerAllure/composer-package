@@ -2,9 +2,8 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
          bootstrap="vendor/autoload.php"
-         cacheResultFile=".phpunit.cache.results"
          executionOrder="depends,defects"
-         forceCoversAnnotation="true"
+         forceCoversAnnotation="false"
          beStrictAboutCoversAnnotation="true"
          beStrictAboutOutputDuringTests="true"
          beStrictAboutTodoAnnotatedTests="true"
@@ -14,14 +13,13 @@
          verbose="true">
     <testsuites>
         <testsuite name="default">
-            <directory>tests/Services</directory>
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
 
-    <coverage cacheDirectory=".phpunit.cache/code-coverage"
-              processUncoveredFiles="true">
+    <coverage processUncoveredFiles="true">
         <include>
-            <directory suffix=".php">src/Services</directory>
+            <directory suffix=".php">src</directory>
         </include>
     </coverage>
 </phpunit>

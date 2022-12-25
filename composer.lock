@@ -364,12 +364,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/predis/predis.git",
-                "reference": "4a77aea9efe63e9cca251aeff7c603b6b76a09cc"
+                "reference": "e540ca062ba45466a62b3a5d576833a1dd214577"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/predis/predis/zipball/4a77aea9efe63e9cca251aeff7c603b6b76a09cc",
-                "reference": "4a77aea9efe63e9cca251aeff7c603b6b76a09cc",
+                "url": "https://api.github.com/repos/predis/predis/zipball/e540ca062ba45466a62b3a5d576833a1dd214577",
+                "reference": "e540ca062ba45466a62b3a5d576833a1dd214577",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -434,7 +434,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-12-20T17:32:58+00:00"
+            "time": "2022-12-23T19:18:50+00:00"
         },
         {
             "name": "psr/http-client",
@@ -1770,12 +1770,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "709ee6094447d7adb00a587c74ddcc664f03b061"
+                "reference": "ba4df045334bf301374a5a7bbf108341cdc27615"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/709ee6094447d7adb00a587c74ddcc664f03b061",
-                "reference": "709ee6094447d7adb00a587c74ddcc664f03b061",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/ba4df045334bf301374a5a7bbf108341cdc27615",
+                "reference": "ba4df045334bf301374a5a7bbf108341cdc27615",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1845,7 +1845,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-12-22T07:57:08+00:00"
+            "time": "2022-12-24T11:55:01+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
