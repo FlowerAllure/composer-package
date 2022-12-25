@@ -46,13 +46,9 @@ $rules = [
     'single_quote' => [
         'strings_containing_single_quote_chars' => true,
     ],
-    'binary_operator_spaces' => [
-        'default' => 'single_space',
-    ],
     'whitespace_after_comma_in_array'       => [
         'ensure_single_space' => true
     ],
-    'phpdoc_add_missing_param_annotation'   => true,
     'ternary_to_null_coalescing'            => true,
     'ternary_operator_spaces'               => true,
     'no_trailing_whitespace'                => true,

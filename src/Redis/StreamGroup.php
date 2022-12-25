@@ -8,8 +8,8 @@
 
 namespace FlowerAllure\ComposerUtils\App\Redis;
 
-use Redis;
 use FlowerAllure\ComposerUtils\App\Db\RedisConnect;
+use Redis;
 
 class StreamGroup
 {

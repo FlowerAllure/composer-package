@@ -23,4 +23,6 @@ jobs:
       - name: Install Dependencies
         run: composer install --prefer-dist --no-progress
       - name: PHPUnit Check
-        run: XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-text
+        run: bash ./php-unit.sh
+      - name: PHP CS Fixer
+        run: bash ./php-cs-fixer.sh
