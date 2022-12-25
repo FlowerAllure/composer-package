@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
       - name: Setup PHP Environment
         uses: shivammathur/setup-php@v2
         with:
@@ -19,6 +21,6 @@ jobs:
           extensions: redis,xdebug
           coverage: xdebug
       - name: Install Dependencies
-        run: composer install
+        run: composer install --prefer-dist --no-progress
       - name: PHPUnit Check
         run: XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-text
