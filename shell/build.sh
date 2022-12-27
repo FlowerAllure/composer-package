@@ -15,7 +15,7 @@ exec_command() {
 
 usage() {
     cat << EOF
-Usage: bash --branch=master --services=service1,service2
+Usage: bash ./shell/build.sh --branch=master --services=service1,service2
 EOF
 }
 
