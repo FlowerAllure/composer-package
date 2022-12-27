@@ -2,14 +2,13 @@
 
 params=(${@})
 
-EXIT_CODE=0
-
 exec_command() {
     command=$1
     eval ${command}
     status=$?
     if [[ ${status} -ne 0 ]];then
-        EXIT_CODE=${status}
+        echo 22
+        exit
     fi
 }
 
@@ -21,8 +20,9 @@ EOF
 
 branch_build() {
     exec_command 'git fetch --tags --progress'
-    local commit=$(exec_command "git rev-parse origin/${1}^{commit}")
-    exec_command "git checkout -f ${commit}"
+#    exec_command "git rev-parse -q --verify origin/${1}^{commit}"
+    local commit=$(exec_command "git rev-parse -q --verify origin/${1}^{commit}")
+#    exec_command "git checkout -f ${commit}"
 }
 
 parse_business() {
