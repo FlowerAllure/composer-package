@@ -22,7 +22,6 @@ $rules = [
     'array_syntax'                          => ['syntax' => 'short'],
     'header_comment'                        => ['header' => $header],
     'php_unit_strict'                       => true,
-    'not_operator_with_successor_space'     => true,
     'combine_consecutive_unsets'            => true,
     'no_useless_else'                       => true,
     'class_attributes_separation' => [
