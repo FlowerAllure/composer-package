@@ -13,6 +13,7 @@ Usage: bash ./shell/build.sh --branch=master --services=service1,service2
 EOF
 }
 
+# git checkout -f $(git rev-parse -q --verify origin/${1}^{commit})
 branch_build() {
     git fetch --tags --progress
     commit=$(git rev-parse -q --verify origin/${1}^{commit})

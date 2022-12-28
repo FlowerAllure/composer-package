@@ -1,21 +1,28 @@
 <?php
+
+/*
+ * This file is part of the flower-allure/composer-utils.
+ * (c) flower-allure <i@flower-allure.me>
+ * This source file is subject to the LGPL license that is bundled.
+ */
+
 use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 
 $header = <<<EOF
-This file is part of the flower-allure/composer-utils.
-(c) flower-allure <i@flower-allure.me>
-This source file is subject to the LGPL license that is bundled.
-EOF;
+    This file is part of the flower-allure/composer-utils.
+    (c) flower-allure <i@flower-allure.me>
+    This source file is subject to the LGPL license that is bundled.
+    EOF;
 
 $rules = [
     '@PSR2'                                 => true,
     '@PHP82Migration'                       => true,
     'array_syntax'                          => [
-        'syntax' => 'short'
+        'syntax' => 'short',
     ],
     'header_comment' => [
-        'header' => $header
+        'header' => $header,
     ],
     'php_unit_construct'                    => true,
     'php_unit_strict'                       => true,
@@ -23,7 +30,7 @@ $rules = [
     'no_useless_else'                       => true,
     'ordered_imports'                       => [
         'sort_algorithm' => 'length',
-        'imports_order' => ['const', 'class', 'function']
+        'imports_order' => ['const', 'class', 'function'],
     ],
     'class_attributes_separation' => [
         'elements' => [
@@ -31,7 +38,7 @@ $rules = [
             'method' => 'one',
             'property' => 'one',
             'trait_import' => 'none',
-            'case' => 'none'
+            'case' => 'none',
         ],
     ],
     'no_whitespace_before_comma_in_array'   => true,
@@ -40,14 +47,14 @@ $rules = [
         'tokens' => [
             'attribute', 'break', 'case', 'continue', 'curly_brace_block',
             'default', 'extra', 'parenthesis_brace_block', 'return',
-            'square_brace_block', 'switch', 'throw', 'use', 'use_trait'
+            'square_brace_block', 'switch', 'throw', 'use', 'use_trait',
         ],
     ],
     'single_quote' => [
         'strings_containing_single_quote_chars' => true,
     ],
     'whitespace_after_comma_in_array'       => [
-        'ensure_single_space' => true
+        'ensure_single_space' => true,
     ],
     'ternary_to_null_coalescing'            => true,
     'ternary_operator_spaces'               => true,
