@@ -36,9 +36,7 @@ $rules = [
     ],
     'no_unneeded_control_parentheses'       => false,
     'not_operator_with_successor_space'     => true,
-    'phpdoc_align'                          => [
-        'tags' => ['param']
-    ],
+    'phpdoc_align'                          => true,
     'phpdoc_no_empty_return'                => false,
     'phpdoc_order'                          => true,
     'combine_consecutive_unsets'            => true,
