@@ -11,21 +11,22 @@ jobs:
         php_version: [8.2]
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
+      - name: Git Version
+        run: git --version
       - name: Setup PHP Environment
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php_version }}
           extensions: redis,xdebug
           coverage: xdebug
-      - name: Validate composer.json and composer.lock
-        run: composer validate --strict
-      - name: Git Version
-        run: git --version
       - name: Force Synchronization Code
         run: bash ./ci/branch.sh --branch=master
       - name: Install Dependencies
         run: composer install --prefer-dist --no-progress
       - name: PHP CS Fixer
-        run: bash ./ci/cs-fix.sh
+        run: bash ./ci/batch-incr-cs-fix.sh
       - name: PHPUnit Check
         run: composer phpunit
