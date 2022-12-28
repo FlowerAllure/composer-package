@@ -15,6 +15,7 @@ EOF
 
 # git checkout -f $(git rev-parse -q --verify origin/${1}^{commit})
 branch_build() {
+    git config --global advice.detachedHead false
     git fetch --tags --progress
     commit=$(git rev-parse -q --verify origin/${1}^{commit})
     if [[ -z $commit ]];then

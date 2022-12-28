@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 exit_command() {
     echo -e "\033[1;33m🎨 请更正代码中的格式错误\033[0m"
