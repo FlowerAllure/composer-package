@@ -21,10 +21,10 @@ jobs:
           extensions: redis,xdebug
           coverage: xdebug
       - name: Force Synchronization Code
-        run: ./ci/branch.sh --branch=master
+        run: bash ./ci/branch.sh --branch=master
       - name: Install Dependencies
         run: composer install --prefer-dist --no-progress
       - name: PHPUnit Check
         run: composer phpunit
       - name: PHP CS Fixer
-        run: ./ci/cs-fix.sh
+        run: bash ./ci/cs-fix.sh
