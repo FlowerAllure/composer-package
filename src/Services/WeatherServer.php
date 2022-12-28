@@ -39,11 +39,11 @@ class WeatherServer
         $url = 'https://restapi.amap.com/v3/weather/weatherInfo';
 
         if (!in_array($type, ['base', 'all'])) {
-            throw new InvalidArgumentException('Invalid type value(base/all): '.$type);
+            throw new InvalidArgumentException('Invalid type value(base/all): ' . $type);
         }
 
         if (!in_array($format, ['xml', 'json'])) {
-            throw new InvalidArgumentException('Invalid response format: '.$format);
+            throw new InvalidArgumentException('Invalid response format: ' . $format);
         }
 
         $query = array_filter([
@@ -79,7 +79,7 @@ class WeatherServer
         $url = 'https://www.wenjiangs.com/api/v2/xzqhSimple';
 
         if (!preg_match('/^(19|20)\\d{2}$/', $year)) {
-            throw new InvalidArgumentException('Invalid year: '.$year);
+            throw new InvalidArgumentException('Invalid year: ' . $year);
         }
 
         try {
