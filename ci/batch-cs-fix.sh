@@ -1,9 +1,5 @@
 #!/bin/bash
 
-exit_command() {
-
-}
-
 START_PATH=$(cd `dirname ${0}`; pwd)
 cd "${START_PATH}/.."
 
