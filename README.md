@@ -2,6 +2,8 @@
 
 No code is the best way to write secure and reliable applications. Write nothing; deploy nowhere.
 
+![StyleCI build status](https://github.styleci.io/repos/581482300/shield)
+
 ## Getting Started
 
 Start by not writing any code.
