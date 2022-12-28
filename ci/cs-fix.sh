@@ -8,7 +8,7 @@ exit_command() {
 check_style() {
     PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php $1 && git diff --exit-code --color=always $1
     if [[ $? -ne 0 ]]; then
-        exit $?
+        exit_command $?
     fi
 }
 
