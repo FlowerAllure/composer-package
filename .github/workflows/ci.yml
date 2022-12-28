@@ -20,9 +20,11 @@ jobs:
           php-version: ${{ matrix.php_version }}
           extensions: redis,xdebug
           coverage: xdebug
+      - name: Force Synchronization Code
+        run: ./ci/branch.sh --branch=master
       - name: Install Dependencies
         run: composer install --prefer-dist --no-progress
       - name: PHPUnit Check
-        run: bash ./php-unit.sh
+        run: composer phpunit
       - name: PHP CS Fixer
-        run: bash ./php-cs-fixer.sh
+        run: ./ci/cs-fix.sh
