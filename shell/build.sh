@@ -2,14 +2,11 @@
 
 params=(${@})
 
-exec_command() {
-    command=$1
-    eval ${command}
-    status=$?
-    if [[ ${status} -ne 0 ]];then
-        echo 22
-        exit
-    fi
+EXIT_CODE=0
+
+exit_command() {
+    echo -e "\033[1;33m参数错误\033[0m"
+    exit $1
 }
 
 usage() {
@@ -19,10 +16,12 @@ EOF
 }
 
 branch_build() {
-    exec_command 'git fetch --tags --progress'
-#    exec_command "git rev-parse -q --verify origin/${1}^{commit}"
-    local commit=$(exec_command "git rev-parse -q --verify origin/${1}^{commit}")
-#    exec_command "git checkout -f ${commit}"
+    git fetch --tags --progress
+    commit=$(git rev-parse -q --verify origin/${1}^{commit})
+    if [[ -z $commit ]];then
+        exit_command $?
+    fi
+    git checkout -f ${commit}
 }
 
 parse_business() {
