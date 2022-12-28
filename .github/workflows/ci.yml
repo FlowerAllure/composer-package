@@ -27,6 +27,6 @@ jobs:
       - name: Install Dependencies
         run: composer install --prefer-dist --no-progress
       - name: PHP CS Fixer
-        run: bash ./ci/batch-incr-cs-fix.sh
+        run: bash ./ci/batch-cs-fix.sh
       - name: PHPUnit Check
         run: composer phpunit
