@@ -67,14 +67,14 @@ class WeatherServer
     /**
      * 请求城市接口.
      *
-     * @param mixed $year
+     * @param string $year
      *
      * @return mixed
      *
      * @throws InvalidArgumentException
      * @throws HttpException
      */
-    public function getCity($year): array
+    public function getCity(string $year): array
     {
         $url = 'https://www.wenjiangs.com/api/v2/xzqhSimple';
 
