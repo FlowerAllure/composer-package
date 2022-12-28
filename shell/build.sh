@@ -2,8 +2,6 @@
 
 params=(${@})
 
-EXIT_CODE=0
-
 exit_command() {
     echo -e "\033[1;33m参数错误\033[0m"
     exit $1
@@ -48,7 +46,7 @@ parse_params() {
 }
 
 START_PATH=$(cd `dirname ${0}`; pwd)
-cd $START_PATH
+cd "${START_PATH}/.."
 
 for param in ${params[@]}
 do
