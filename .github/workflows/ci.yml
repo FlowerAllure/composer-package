@@ -20,8 +20,8 @@ jobs:
           php-version: ${{ matrix.php_version }}
           extensions: redis,xdebug
           coverage: xdebug
-      - name: Force Synchronization Code
-        run: bash ./ci/branch.sh --branch=master
+#      - name: Force Synchronization Code
+#        run: bash ./ci/branch.sh --branch=master
       - name: Install Dependencies
         run: composer install --prefer-dist --no-progress
       - name: PHP CS Fixer
