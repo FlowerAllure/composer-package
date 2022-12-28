@@ -67,9 +67,7 @@ class WeatherServer
     /**
      * 请求城市接口.
      *
-     * @param string $year
-     *
-     * @return mixed
+     * @param string $year 年份
      *
      * @throws InvalidArgumentException
      * @throws HttpException
@@ -111,7 +109,8 @@ class WeatherServer
     /**
      * 获取天气预报.
      *
-     * @return mixed|string
+     * @param string $city   年份
+     * @param string $format 格式，默认json
      *
      * @throws HttpException
      * @throws InvalidArgumentException
