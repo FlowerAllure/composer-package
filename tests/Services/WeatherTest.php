@@ -8,16 +8,16 @@
 
 namespace FlowerAllure\ComposerUtils\Tests\Services;
 
-use GuzzleHttp\Client;
-use Mockery\Matcher\AnyArgs;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\ClientInterface;
-use PHPUnit\Framework\TestCase;
-use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Exception\TransferException;
-use FlowerAllure\ComposerUtils\App\Services\WeatherServer;
 use FlowerAllure\ComposerUtils\App\Exceptions\HttpException;
 use FlowerAllure\ComposerUtils\App\Exceptions\InvalidArgumentException;
+use FlowerAllure\ComposerUtils\App\Services\WeatherServer;
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Exception\TransferException;
+use GuzzleHttp\Psr7\Response;
+use Mockery\Matcher\AnyArgs;
+use PHPUnit\Framework\TestCase;
 
 class WeatherTest extends TestCase
 {
@@ -174,10 +174,10 @@ class WeatherTest extends TestCase
     /**
      * 测试城市HTTP请求
      *
+     * @return void
+     *
      * @throws GuzzleException
      * @throws HttpException
-     *
-     * @return void
      */
     public function testGetCity()
     {

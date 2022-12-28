@@ -8,10 +8,10 @@
 
 namespace FlowerAllure\ComposerUtils\App\Services;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\GuzzleException;
 use FlowerAllure\ComposerUtils\App\Exceptions\HttpException;
 use FlowerAllure\ComposerUtils\App\Exceptions\InvalidArgumentException;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 
 class WeatherServer
 {
@@ -69,10 +69,10 @@ class WeatherServer
      *
      * @param mixed $year
      *
+     * @return mixed
+     *
      * @throws InvalidArgumentException
      * @throws HttpException
-     *
-     * @return mixed
      */
     public function getCity($year): array
     {
@@ -98,10 +98,10 @@ class WeatherServer
     /**
      * 获取实时天气.
      *
+     * @return mixed|string
+     *
      * @throws HttpException
      * @throws InvalidArgumentException
-     *
-     * @return mixed|string
      */
     public function getLiveWeather(string $city, string $format = 'json'): mixed
     {
@@ -111,10 +111,10 @@ class WeatherServer
     /**
      * 获取天气预报.
      *
+     * @return mixed|string
+     *
      * @throws HttpException
      * @throws InvalidArgumentException
-     *
-     * @return mixed|string
      */
     public function getForecastsWeather(string $city, string $format = 'json'): mixed
     {

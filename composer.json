@@ -39,6 +39,9 @@
     },
     "scripts": {
         "cs-fixer": [
+            "PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php ./"
+        ],
+        "cs-fixer:commit": [
             "PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php ./",
             "git add . && git commit -m '🎨 Apply PHP CS Fixer'"
         ],
