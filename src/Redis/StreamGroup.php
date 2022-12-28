@@ -8,12 +8,11 @@
 
 namespace FlowerAllure\ComposerUtils\App\Redis;
 
-use Redis;
 use FlowerAllure\ComposerUtils\App\Db\RedisConnect;
 
 class StreamGroup
 {
-    private Redis $redis;
+    private \Redis $redis;
 
     public function __construct(public string $streamKey = '')
     {
@@ -44,7 +43,7 @@ class StreamGroup
         return $this;
     }
 
-    public function xReadGroup(string $group, string $consumer): array|Redis
+    public function xReadGroup(string $group, string $consumer): array|\Redis
     {
         return $this->redis->xReadGroup($group, $consumer, [$this->streamKey => '>'], 1);
     }

@@ -17,7 +17,7 @@ $header = <<<EOF
 
 $rules = [
     '@PSR2'                                 => true,
-    '@PHP82Migration'                       => true,
+    '@Symfony'                              => true,
     'array_syntax'                          => [
         'syntax' => 'short',
     ],
@@ -26,6 +26,21 @@ $rules = [
     ],
     'php_unit_construct'                    => true,
     'php_unit_strict'                       => true,
+    'no_empty_comment' => false,
+    'no_extra_blank_lines'                  => [
+        'tokens' => [
+            'attribute', 'break', 'case', 'continue', 'curly_brace_block',
+            'default', 'extra', 'parenthesis_brace_block', 'return',
+            'square_brace_block', 'switch', 'throw', 'use', 'use_trait',
+        ],
+    ],
+    'no_unneeded_control_parentheses'       => false,
+    'not_operator_with_successor_space'     => true,
+    'phpdoc_align'                          => [
+        'tags' => ['param']
+    ],
+    'phpdoc_no_empty_return'                => false,
+    'phpdoc_order'                          => true,
     'combine_consecutive_unsets'            => true,
     'no_useless_else'                       => true,
     'ordered_imports'                       => [
@@ -43,13 +58,7 @@ $rules = [
     ],
     'no_whitespace_before_comma_in_array'   => true,
     'no_useless_return'                     => true,
-    'no_extra_blank_lines'                  => [
-        'tokens' => [
-            'attribute', 'break', 'case', 'continue', 'curly_brace_block',
-            'default', 'extra', 'parenthesis_brace_block', 'return',
-            'square_brace_block', 'switch', 'throw', 'use', 'use_trait',
-        ],
-    ],
+
     'single_quote' => [
         'strings_containing_single_quote_chars' => true,
     ],

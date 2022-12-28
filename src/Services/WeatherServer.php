@@ -25,10 +25,12 @@ class WeatherServer
     }
 
     /**
-     * 请求天气接口
-     * @param string $city 城市编码或则城市名称
-     * @param string $type 类型 base|all
+     * 请求天气接口.
+     *
+     * @param string $city   城市编码或则城市名称
+     * @param string $type   类型 base|all
      * @param string $format 编码格式 json|xml
+     *
      * @throws HttpException
      * @throws InvalidArgumentException
      */
@@ -36,11 +38,11 @@ class WeatherServer
     {
         $url = 'https://restapi.amap.com/v3/weather/weatherInfo';
 
-        if (!in_array($type, ['base', 'all'])) {
+        if (! in_array($type, ['base', 'all'])) {
             throw new InvalidArgumentException('Invalid type value(base/all): ' . $type);
         }
 
-        if (!in_array($format, ['xml', 'json'])) {
+        if (! in_array($format, ['xml', 'json'])) {
             throw new InvalidArgumentException('Invalid response format: ' . $format);
         }
 
@@ -63,17 +65,20 @@ class WeatherServer
     }
 
     /**
-     * 请求城市接口
+     * 请求城市接口.
+     *
      * @param mixed $year
-     * @return mixed
+     *
      * @throws InvalidArgumentException
      * @throws HttpException
+     *
+     * @return mixed
      */
     public function getCity($year): array
     {
         $url = 'https://www.wenjiangs.com/api/v2/xzqhSimple';
 
-        if (!preg_match('/^(19|20)\\d{2}$/', $year)) {
+        if (! preg_match('/^(19|20)\\d{2}$/', $year)) {
             throw new InvalidArgumentException('Invalid year: ' . $year);
         }
 
@@ -91,12 +96,12 @@ class WeatherServer
     }
 
     /**
-     * 获取实时天气
-     * @param string $city
-     * @param string $format
-     * @return mixed|string
+     * 获取实时天气.
+     *
      * @throws HttpException
      * @throws InvalidArgumentException
+     *
+     * @return mixed|string
      */
     public function getLiveWeather(string $city, string $format = 'json'): mixed
     {
@@ -104,12 +109,12 @@ class WeatherServer
     }
 
     /**
-     * 获取天气预报
-     * @param string $city
-     * @param string $format
-     * @return mixed|string
+     * 获取天气预报.
+     *
      * @throws HttpException
      * @throws InvalidArgumentException
+     *
+     * @return mixed|string
      */
     public function getForecastsWeather(string $city, string $format = 'json'): mixed
     {

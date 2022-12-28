@@ -36,5 +36,14 @@
                 "FlowerAllure\\ComposerUtils\\App\\Provider\\WeatherProvider"
             ]
         }
+    },
+    "scripts": {
+        "cs-fixer": [
+            "PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php ./",
+            "git add . && git commit -m '🎨 Apply PHP CS Fixer'"
+        ],
+        "phpunit": [
+            "XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-text"
+        ]
     }
 }
