@@ -12,16 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Validate composer.json and composer.lock
-        run: composer validate --strict
-      - name: Git Version
-        run: git --version
       - name: Setup PHP Environment
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php_version }}
           extensions: redis,xdebug
           coverage: xdebug
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
+      - name: Git Version
+        run: git --version
       - name: Force Synchronization Code
         run: bash ./ci/build-code.sh --branch=master
       - name: Install Dependencies
