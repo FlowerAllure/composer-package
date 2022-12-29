@@ -29,7 +29,8 @@
         "phpunit/phpunit": "^9",
         "friendsofphp/php-cs-fixer": "dev-master",
         "mockery/mockery": "^1.5",
-        "vimeo/psalm": "^4.9"
+        "vimeo/psalm": "^4.9",
+        "phpstan/phpstan": "1.9.x-dev"
     },
     "extra": {
         "laravel": {
