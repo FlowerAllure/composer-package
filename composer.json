@@ -40,18 +40,18 @@
         }
     },
     "scripts": {
+        "test": [
+            "XDEBUG_MODE=coverage ./vendor/bin/phpunit --color"
+        ],
+        "test-coverage": [
+            "XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-text --color"
+        ],
         "check-style": [
             "PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/php-cs-fixer fix --using-cache=no --diff --config=.php-cs-fixer.php --dry-run --allow-risky=yes --ansi"
         ],
         "fix-style": [
             "PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/php-cs-fixer fix --using-cache=no --config=.php-cs-fixer.php --allow-risky=yes --ansi",
             "git add . && git commit -m '🎨 Apply PHP CS Fixer'"
-        ],
-        "test": [
-            "XDEBUG_MODE=coverage ./vendor/bin/phpunit --color"
-        ],
-        "test-coverage": [
-            "XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-text --color"
         ],
         "pslam": [
             "./vendor/bin/psalm --show-info=true --no-cache"
@@ -61,6 +61,7 @@
         ],
         "fix-pslam": [
             "./vendor/bin/psalm --no-cache --alter --issues=MissingReturnType,MissingParamType,InvalidReturnType"
-        ]
+        ],
+        "check-phpstan": "/vendor/bin/phpstan analyse -c phpstan.neon --xdebug"
     }
 }
