@@ -30,7 +30,8 @@
         "friendsofphp/php-cs-fixer": "dev-master",
         "mockery/mockery": "^1.5",
         "vimeo/psalm": "^4.9",
-        "phpstan/phpstan": "1.9.x-dev"
+        "phpstan/phpstan": "1.9.x-dev",
+        "brainmaestro/composer-git-hooks": "dev-master"
     },
     "extra": {
         "laravel": {
@@ -62,6 +63,6 @@
         "fix-pslam": [
             "./vendor/bin/psalm --no-cache --alter --issues=MissingReturnType,MissingParamType,InvalidReturnType"
         ],
-        "check-phpstan": "/vendor/bin/phpstan analyse -c phpstan.neon --xdebug"
+        "check-phpstan": "./vendor/bin/phpstan analyse -c phpstan.neon --xdebug"
     }
 }

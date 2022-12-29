@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "15ea9075f453f822d54013986bf758e9",
+    "content-hash": "1941b186f826466af5ef0004aef8a25d",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -920,6 +920,86 @@
                 }
             ],
             "time": "2022-06-21T18:19:50+00:00"
+        },
+        {
+            "name": "brainmaestro/composer-git-hooks",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BrainMaestro/composer-git-hooks.git",
+                "reference": "7f21f5a5ce0971ac94493118f9776a5034001397"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BrainMaestro/composer-git-hooks/zipball/7f21f5a5ce0971ac94493118f9776a5034001397",
+                "reference": "7f21f5a5ce0971ac94493118f9776a5034001397",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": "^8.0",
+                "symfony/console": "^6.0"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "default-branch": true,
+            "bin": [
+                "cghooks"
+            ],
+            "type": "library",
+            "extra": {
+                "hooks": {
+                    "pre-commit": "composer check-style",
+                    "pre-push": [
+                        "composer test",
+                        "appver=$(grep -o -E '\\d.\\d.\\d(-alpha.\\d)?' cghooks)",
+                        "tag=$(git tag | tail -n 1)",
+                        "if [ \"$tag\" != \"v$appver\" ]; then",
+                        "echo \"The most recent tag $tag does not match the application version $appver\\n\"",
+                        "tag=${tag#v}",
+                        "sed -i -E \"s/$appver/$tag/\" cghooks",
+                        "exit 1",
+                        "fi"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "BrainMaestro\\GitHooks\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ezinwa Okpoechi",
+                    "email": "brainmaestro@outlook.com"
+                }
+            ],
+            "description": "Easily manage git hooks in your composer config",
+            "keywords": [
+                "HOOK",
+                "composer",
+                "git"
+            ],
+            "support": {
+                "issues": "https://github.com/BrainMaestro/composer-git-hooks/issues",
+                "source": "https://github.com/BrainMaestro/composer-git-hooks/tree/master"
+            },
+            "time": "2022-07-20T15:59:33+00:00"
         },
         {
             "name": "composer/package-versions-deprecated",
@@ -5995,7 +6075,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "friendsofphp/php-cs-fixer": 20,
-        "phpstan/phpstan": 20
+        "phpstan/phpstan": 20,
+        "brainmaestro/composer-git-hooks": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
