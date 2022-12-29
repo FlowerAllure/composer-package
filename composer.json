@@ -48,7 +48,7 @@
         "test": [
             "XDEBUG_MODE=coverage ./vendor/bin/phpunit --color"
         ],
-        "test:coverage": [
+        "test-coverage": [
             "XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-text --color"
         ]
     }
