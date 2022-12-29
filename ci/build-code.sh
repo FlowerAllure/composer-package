@@ -12,7 +12,10 @@ usage() {
 Usage: bash ./shell/build.sh --branch=master --services=service1,service2
 
 branch_build function core code:
-    git checkout -f $(git rev-parse -q --verify origin/${1}^{commit})
+    git fetch && git checkout -f $(git rev-parse -q --verify origin/${1}^{commit})
+
+and other model
+    git fetch && git reset --hard origin/${1}
 
 EOF
 }
