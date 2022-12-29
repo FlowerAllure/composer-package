@@ -38,15 +38,18 @@
         }
     },
     "scripts": {
-        "cs-fixer": [
-            "PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php ./"
+        "check-style": [
+            "PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/php-cs-fixer fix --using-cache=no --diff --config=.php-cs-fixer.php --dry-run --allow-risky=yes --ansi"
         ],
-        "cs-fixer:commit": [
-            "PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php ./",
+        "fix-style": [
+            "PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/php-cs-fixer fix --using-cache=no --config=.php-cs-fixer.php --allow-risky=yes --ansi",
             "git add . && git commit -m '🎨 Apply PHP CS Fixer'"
         ],
-        "phpunit": [
-            "XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-text"
+        "test": [
+            "XDEBUG_MODE=coverage ./vendor/bin/phpunit --color"
+        ],
+        "test:coverage": [
+            "XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-text --color"
         ]
     }
 }

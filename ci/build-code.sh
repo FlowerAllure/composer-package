@@ -10,10 +10,13 @@ exit_command() {
 usage() {
     cat << EOF
 Usage: bash ./shell/build.sh --branch=master --services=service1,service2
+
+branch_build function core code:
+    git checkout -f $(git rev-parse -q --verify origin/${1}^{commit})
+
 EOF
 }
 
-# git checkout -f $(git rev-parse -q --verify origin/${1}^{commit})
 branch_build() {
     git config --global advice.detachedHead false
     git fetch --tags --progress
@@ -24,6 +27,7 @@ branch_build() {
     git checkout -f ${commit}
 }
 
+# 分解参数
 parse_business() {
     case "$1" in
       "--branch")
@@ -35,6 +39,7 @@ parse_business() {
     esac
 }
 
+# 解析参数
 parse_params() {
     OLD_IFS="$IFS"
     IFS="="

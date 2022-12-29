@@ -15,7 +15,7 @@ check_style() {
 START_PATH=$(cd `dirname ${0}`; pwd)
 cd "${START_PATH}/.."
 
-# 和GitHub不兼容
+# 和 GitHub Action 不兼容
 changes=$(git diff --name-only --diff-filter=ACMRT --exit-code HEAD~1)
 for file in $changes
 do
