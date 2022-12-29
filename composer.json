@@ -42,7 +42,9 @@
             "PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/php-cs-fixer fix --using-cache=no --diff --config=.php-cs-fixer.php --dry-run --allow-risky=yes --ansi"
         ],
         "fix-style": [
-            "PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/php-cs-fixer fix --using-cache=no --config=.php-cs-fixer.php --allow-risky=yes --ansi",
+            "PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/php-cs-fixer fix --using-cache=no --config=.php-cs-fixer.php --allow-risky=yes --ansi"
+        ],
+        "fix-commit": [
             "git add . && git commit -m '🎨 Apply PHP CS Fixer'"
         ],
         "test": [
