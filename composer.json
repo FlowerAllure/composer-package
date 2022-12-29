@@ -42,7 +42,6 @@
         "hooks": {
             "pre-commit": [
                 "composer check-style",
-                "composer psalm",
                 "composer test"
             ],
             "pre-push": [
@@ -51,17 +50,16 @@
         }
     },
     "scripts": {
+        "post-merge": "composer install",
+        "post-remove-cmd": [
+            "./vendor/bin/cghooks remove"
+        ],
         "post-install-cmd": [
-            "cghooks remove",
-            "cghooks add --ignore-lock",
-            "cghooks update"
+            "./vendor/bin/cghooks add --ignore-lock"
         ],
         "post-update-cmd": [
-            "cghooks remove",
-            "cghooks add --ignore-lock",
-            "cghooks update"
+            "./vendor/bin/cghooks update"
         ],
-        "post-merge": "composer install",
         "test": [
             "XDEBUG_MODE=coverage ./vendor/bin/phpunit --color"
         ],
