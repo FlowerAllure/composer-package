@@ -3,7 +3,7 @@
 No code is the best way to write secure and reliable applications. Write nothing; deploy nowhere.
 
 [![Tests](https://github.com/FlowerAllure/composer-utils/actions/workflows/ci.yml/badge.svg)](https://github.com/FlowerAllure/composer-utils/actions/workflows/ci.yml)
-![StyleCI build status](https://github.styleci.io/repos/581482300/shield)
+[![StyleCI build status](https://github.styleci.io/repos/581482300/shield)](https://github.styleci.io/repos/581482300)
 
 ## Getting Started
 
