@@ -30,8 +30,7 @@
         "friendsofphp/php-cs-fixer": "dev-master",
         "mockery/mockery": "^1.5",
         "vimeo/psalm": "^4.9",
-        "phpstan/phpstan": "1.9.x-dev",
-        "brainmaestro/composer-git-hooks": "dev-master"
+        "phpstan/phpstan": "1.9.x-dev"
     },
     "extra": {
         "laravel": {
