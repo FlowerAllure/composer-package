@@ -17,6 +17,9 @@ class StreamQueue
         $this->streamGroup = $streamGroup;
     }
 
+    /**
+     * @return \Redis|array
+     */
     public function work($group)
     {
         while (true) {

@@ -43,12 +43,12 @@ class StreamGroup
         return $this;
     }
 
-    public function xReadGroup(string $group, string $consumer): array|\Redis
+    public function xReadGroup(string $group, string $consumer): array|bool|\Redis
     {
         return $this->redis->xReadGroup($group, $consumer, [$this->streamKey => '>'], 1);
     }
 
-    public function xAck(string $group, array $messages)
+    public function xAck(string $group, array $messages): void
     {
         $this->redis->xAck($this->streamKey, $group, $messages);
     }

@@ -51,6 +51,15 @@
         ],
         "test-coverage": [
             "XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-text --color"
+        ],
+        "pslam": [
+            "./vendor/bin/psalm --show-info=true --no-cache"
+        ],
+        "check-pslam": [
+            "./vendor/bin/psalm --no-cache --alter --issues=MissingReturnType,MissingParamType,InvalidReturnType --dry-run"
+        ],
+        "fix-pslam": [
+            "./vendor/bin/psalm --no-cache --alter --issues=MissingReturnType,MissingParamType,InvalidReturnType"
         ]
     }
 }
