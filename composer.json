@@ -38,9 +38,30 @@
             "providers": [
                 "FlowerAllure\\ComposerUtils\\App\\Provider\\WeatherProvider"
             ]
+        },
+        "hooks": {
+            "pre-commit": [
+                "composer check-style",
+                "composer psalm",
+                "composer test"
+            ],
+            "pre-push": [
+                "composer check-style"
+            ]
         }
     },
     "scripts": {
+        "post-install-cmd": [
+            "cghooks remove",
+            "cghooks add --ignore-lock",
+            "cghooks update"
+        ],
+        "post-update-cmd": [
+            "cghooks remove",
+            "cghooks add --ignore-lock",
+            "cghooks update"
+        ],
+        "post-merge": "composer install",
         "test": [
             "XDEBUG_MODE=coverage ./vendor/bin/phpunit --color"
         ],
