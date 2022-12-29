@@ -41,23 +41,30 @@
         },
         "hooks": {
             "pre-commit": [
+                "echo committing as $(git config user.name)",
                 "composer check-style",
                 "composer test"
             ],
             "pre-push": [
                 "composer check-style"
-            ]
+            ],
+            "post-merge": "composer install"
         }
     },
     "scripts": {
-        "post-merge": "composer install",
-        "post-remove-cmd": [
-            "./vendor/bin/cghooks remove"
-        ],
         "post-install-cmd": [
-            "./vendor/bin/cghooks add --ignore-lock"
+            "./vendor/bin/cghooks remove",
+            "./vendor/bin/cghooks add --ignore-lock",
+            "./vendor/bin/cghooks update"
         ],
         "post-update-cmd": [
+            "./vendor/bin/cghooks remove",
+            "./vendor/bin/cghooks add --ignore-lock",
+            "./vendor/bin/cghooks update"
+        ],
+        "cghooks": [
+            "./vendor/bin/cghooks remove",
+            "./vendor/bin/cghooks add --ignore-lock",
             "./vendor/bin/cghooks update"
         ],
         "test": [
